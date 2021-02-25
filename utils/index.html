@@ -13,15 +13,13 @@
     <div class="jumbotron">
         <h1> Professional ReadME Generator!</h1>
         <div class="content">
-            <ul>
-                <li>
-                    <p>What is your GitHub Username? ${questions.username}</p>
-                    <p> What is your email address? ${questions.email}</p>
-                    <p> What is your project title? ${questions.title}</p>
-                    <p>Write a description of your project ${questions.description}</p>
-                    <p>What kind of license should your project have? ${questions.license}</p>
-                    <!-- Badges ${questions.badges}-->
-                </li>
+            <ul class = "list-group list-group-horizontal-lg">
+                <li class="list-group-item">What is your GitHub Username? ${questions.username}</li>
+                 <li class="list-group-item"> What is your email address? ${questions.email}</li>
+                 <li> <h1> ${questions.title}</h1> </li>
+                 <li> <p>${questions.description}</p></li>
+                 <li>What kind of license should your project have? ${questions.license}</li>
+                  <!-- Badges ${questions.badges}-->
             </ul>
         </div>
 </body>
