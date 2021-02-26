@@ -28,45 +28,36 @@ inquirer.prompt([
         name: "description",
         message: "Write quick description of your project",
     },
-    // {
-    //     type: "options",
-    //     name: "license",
-    //     message: "What type of license is included in your project?",
-    // },
-]);
-const generateHTML = (questions) =>
-`<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <title>ReadME Generator</title>
-</head>
-<body>
-    <div class="jumbotron">
-        <h1> Professional ReadME Generator!</h1>
-        <div class = "content">
-                 <ul>
-                     <li> Github Username: ${questions.username}</li>
-                     <li> Email address: ${questions.email}</li>
-                     <hi> ${questions.title}</hi>
-                     <p> ${questions.description}</p>
-                      //<li>What kind of license should your project have? ${questions.license}</li>
-                       // Badges ${questions.badges}
-                </ul>
-         </div>
-</body>
-</html>`;
+    {
+        type: "checkbox",
+        name: "license",
+        message: "What type of license is included in your project?",
+        choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
+    },
+])
+.then(function(questions){
+    const generateReadme = `
+    <h1> ${questions.title} </h1>
+    ## Table of contents
+    -[Description]
+    -[License]
+    -[Badges]
+    ## Description 
+    ${questions.description}
+    ## License
+    ${questions.license}
+   <p> My Githhub :   ${questions.username} <p>
+   <p> Any Questions, Contact Me!  ${questions.email}<p>
+    `
+});
 
-// // TODO: Create a function to write README file
-// function writeToFile("generateMarkdown.js", data) {}
+// TODO: Create a function to write README file
+function writeToFile(filename, data) {}
 
 // TODO: Create a function to initialize app
 const init = () => {
   readmeQuestions()
-   .then((questions) => writeFileSync("index.html", generateHTML)
+   .then((questions) => writeFileSync("readME.md", generateReadme)
    .then(() => console.log("Successfully Generated a ReadME"))
    .catch((err) => console.error(err)));        
 };
