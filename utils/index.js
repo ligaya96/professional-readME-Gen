@@ -45,20 +45,26 @@ inquirer.prompt([
 ])
 const generateReadme = (questions) => `
     <h1> ${questions.title} </h1>
+    
     ## Table of contents
     -[Description](#description)
     -[License](#license)
     -[Contributers](#contributors)
     -[Installtion Process]
+    
     ## Project Description 
     ${questions.description}
+
     ## Contributors
     ${questions.contributors}
+
     ## License
      Licensed: ${questions.license}
-     ![badge](https://img.shields.io/github/license/<Github-Username>/<Repository>)
+     ![badge](https://img.shields.io/badge/license-${answers.license}-blueviolet)
+     
     ## Installtion Process
     ${questions.installation}
+
    <p> My Githhub : ${questions.username} (http://github.com/ ${questions.username})<p>
    <p> Any Questions??, Contact Me! ${questions.email}<p>
     `
