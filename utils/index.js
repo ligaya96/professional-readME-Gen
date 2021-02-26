@@ -1,11 +1,9 @@
-// TODO: Include packages needed for this application
+// Inquirer
 const inquirer = require("inquirer");
 const fs = require("fs")
 const util = require('util');
 
-const writeFilesync = util.promisify(fs.writeFile);
-
-// TODO: Create an array of questions for user input
+//  prompting User Questions 
 const readmeQuestions = () =>
 inquirer.prompt([
     {
@@ -34,30 +32,43 @@ inquirer.prompt([
         message: "What type of license is included in your project?",
         choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
     },
+    {
+        type: "input",
+        name: "contributors",
+        message: "Name any contributors" 
+    },
+    {
+        type: "input",
+        name: "installation",
+        message: "How do you install your project?: ",
+    }
 ])
-.then(function(questions){
-    const generateReadme = `
+const generateReadme = (questions) => `
     <h1> ${questions.title} </h1>
     ## Table of contents
-    -[Description]
-    -[License]
-    -[Badges]
-    ## Description 
+    -[Description](#description)
+    -[License](#license)
+    -[Contributers](#contributors)
+    -[Installtion Process]
+    ## Project Description 
     ${questions.description}
+    ## Contributors
+    ${questions.contributors}
     ## License
-    ${questions.license}
-   <p> My Githhub :   ${questions.username} <p>
-   <p> Any Questions, Contact Me!  ${questions.email}<p>
+     Licensed: ${questions.license}
+     ![badge](https://img.shields.io/github/license/<Github-Username>/<Repository>)
+    ## Installtion Process
+    ${questions.installation}
+   <p> My Githhub : ${questions.username} (http://github.com/ ${questions.username})<p>
+   <p> Any Questions??, Contact Me! ${questions.email}<p>
     `
-});
+// Writing the file (promise)
+const writeFileAsync = util.promisify(fs.writeFile);
 
-// TODO: Create a function to write README file
-function writeToFile(filename, data) {}
-
-// TODO: Create a function to initialize app
+// using a promise to run the application
 const init = () => {
   readmeQuestions()
-   .then((questions) => writeFileSync("readME.md", generateReadme)
+   .then((questions) => writeFileAsync("readME.md", generateReadme(questions))
    .then(() => console.log("Successfully Generated a ReadME"))
    .catch((err) => console.error(err)));        
 };
