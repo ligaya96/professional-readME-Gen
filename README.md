@@ -8,11 +8,11 @@ With this Professional Readme Generator, a user can input various readme questio
 <li> Go to Command Line, input "node index.js </li>
 <li> Input Values, After adding Values a readme.md file will appear </li>
 </ul>
-<img> screenshot</img>
+<img> Screenshot</img>
 <h2> Walkthrough Video <h2>
 <img> Video <img>
 
 
-##Deployed github : 
-##emailme! : ligaya96@gmail.com
+<h2>Deployed github: https://github.com/ligaya96/professional-readME-Gen </h2>
+<h2>emailme! : ligaya96@gmail.com </h2>
 
