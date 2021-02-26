@@ -45,7 +45,7 @@ inquirer.prompt([
 ])
 const generateReadme = (questions) => `
     <h1> ${questions.title} </h1>
-    
+
     ## Table of contents
     -[Description](#description)
     -[License](#license)
@@ -53,20 +53,19 @@ const generateReadme = (questions) => `
     -[Installtion Process]
     
     ## Project Description 
-    ${questions.description}
-
+   <p> ${questions.description} </p>
     ## Contributors
-    ${questions.contributors}
+   <h2> ${questions.contributors} </h2>
 
     ## License
-     Licensed: ${questions.license}
+     <2> Licensed: ${questions.license} </h2>
      ![badge](https://img.shields.io/badge/license-${answers.license}-blueviolet)
      
     ## Installtion Process
-    ${questions.installation}
+    <h2>${questions.installation} </h2>
 
-   <p> My Githhub : ${questions.username} (http://github.com/ ${questions.username})<p>
-   <p> Any Questions??, Contact Me! ${questions.email}<p>
+   <h2> My Githhub : ${questions.username} (http://github.com/ ${questions.username}) </h2>
+   <h2> Any Questions??, Contact Me! ${questions.email}</h2>
     `
 // Writing the file (promise)
 const writeFileAsync = util.promisify(fs.writeFile);
