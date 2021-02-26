@@ -50,19 +50,20 @@ const generateReadme = (questions) => `
     -[Description](#description)
     -[License](#license)
     -[Contributers](#contributors)
-    -[Installtion Process]
+    -[Installtion Process](#installation)
     
     ## Project Description 
-   <p> ${questions.description} </p>
+   ${questions.description} 
     ## Contributors
-   <h2> ${questions.contributors} </h2>
+   ${questions.contributors}
 
     ## License
-     <h2> Licensed: ${questions.license} </h2>
+      Licensed: ${questions.license} 
+
      ![badge](https://img.shields.io/badge/license-${questions.license}-blueviolet)
      
     ## Installtion Process
-    <h2>${questions.installation} </h2>
+    ${questions.installation}
 
    <h2> My Githhub : ${questions.username} (http://github.com/ ${questions.username}) </h2>
    <h2> Any Questions??, Contact Me! ${questions.email}</h2>
