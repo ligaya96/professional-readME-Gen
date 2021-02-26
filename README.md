@@ -11,7 +11,7 @@ With this Professional Readme Generator, a user can input various readme questio
 <h2>ScreenShot</h2>
 <img scr = "readme.png" alt = "screenshot">
 <h2> Walkthrough Video <h2>
-<img> Video <img>
+<iframe src="https://drive.google.com/file/d/1SCpd6ERtfVOmhX8HdDljjyJdLMAl38bQ/preview" width="640" height="480"></iframe>
 
 
 <h2>Deployed github: https://github.com/ligaya96/professional-readME-Gen </h2>
