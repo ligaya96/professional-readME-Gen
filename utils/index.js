@@ -45,7 +45,8 @@ inquirer.prompt([
     }
 ])
 const generateReadme = (questions) => `
-        <h2>${questions.title}</h2>
+    <h2> ${questions.title}</h2>
+    </br>
    <h2> Table of contents</h2>
     \n*[Description](#description)
     \n*[License](#license)
@@ -66,7 +67,7 @@ const generateReadme = (questions) => `
     <h2> #Installation Process</h2>
     ${questions.installation}
    <h2> My Githhub : ${questions.username} (http://github.com/ ${questions.username}) </h2>
-   <h2> Any Questions??, Contact Me! ${questions.email}</h2>
+   <h2> Any Questions?? Contact Me! ${questions.email}</h2>
     `
 // Writing the file (promise)
 const writeFileAsync = util.promisify(fs.writeFile);
