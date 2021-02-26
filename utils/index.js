@@ -45,7 +45,7 @@ inquirer.prompt([
     }
 ])
 const generateReadme = (questions) => `
-      ${questions.title}
+    <h2 align = "center">  ${questions.title} </h2>
    <h2> Table of contents< /h2>
     \n*[Description](#description)
     \n*[License](#license)
@@ -59,7 +59,7 @@ const generateReadme = (questions) => `
    ${questions.contributors}
     </br>
     <h2> License</h2>
-     ![badge](https://img.shields.io/badge/license-${questions.license}-blueviolet)
+     ![badge](https://img.shields.io/badge/license-${questions.license}-orange)
      </br>
      License: ${questions.license}
      </br> 
