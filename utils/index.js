@@ -58,7 +58,7 @@ const generateReadme = (questions) => `
    <h2> ${questions.contributors} </h2>
 
     ## License
-     <2> Licensed: ${questions.license} </h2>
+     <h2> Licensed: ${questions.license} </h2>
      ![badge](https://img.shields.io/badge/license-${questions.license}-blueviolet)
      
     ## Installtion Process
